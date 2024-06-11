@@ -28,6 +28,7 @@ public class BasePage {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(chromeOptions);
     }
+    //Creamos el metodo para navegar que recibe el argumento String url
     public void navigateTo(String url){
         driver.get(url);
     }
