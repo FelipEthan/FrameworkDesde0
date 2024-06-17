@@ -1,23 +1,39 @@
 package pages;
 import org.openqa.selenium.WebDriver;
-//La clase LoginPage extiende de BasePage para obtener los metodos de esa clase.
-public class LoginPage extends BasePage {
-    //Se crea la variable login que recibira el elemento Xpath
+public class LoginPage extends BasePage { //La clase LoginPage extiende de BasePage para obtener los metodos de esa clase.
+
     private String login = "//a[@href='/login']";
-    //Se crea el constructor de la clase padre BasePage, Se usa para inicializar la clase padre BasePage con un objeto WebDriver
-    public LoginPage(WebDriver driver) {
+    private String textValidate = "//h2[contains(text(),'New User Signup!')]";
+    private String name = "//input[@data-qa='signup-name']";
+    private String mail = "//input[@data-qa='signup-email']";
+    private String sign = "//button[@data-qa='signup-button']";
+    private String dates = "//*[@id=\"form\"]/div/div/div/div[1]/h2";
+
+    public LoginPage(WebDriver driver) { //Se crea el constructor de la clase padre BasePage, Se usa para inicializar la clase padre BasePage con un objeto WebDriver
         super(driver);
     }
-    //Se crea el metodo navigate que llama al metodo navigateTo heredado de BasePage y se pasa la URL.
-    public void navigateToPageLogin() {
+    public void navigateToPageLogin() { //Se crea el metodo navigate que llama al metodo navigateTo heredado de BasePage y se pasa la URL.
         this.navigateTo("https://www.automationexercise.com/");
     }
-    //Se crea el metodo close que llama al metodo closeBrowser heredado de BasePage y cierra el driver
-    public void closesBrowser(){
+    public void closesBrowser(){ //Se crea el metodo close que llama al metodo closeBrowser heredado de BasePage y cierra el driver
         this.closeBrowser();
     }
-    //Se crea el metodo clickLogin que llama al metodo clickElement heredado de BasePage
-    public void clickLogin() {
+    public void clickLogin() { //Se crea el metodo clickLogin que llama al metodo clickElement heredado de BasePage
         this.clickElement(this.login);
+    }
+    public Boolean textValidate(){ //Se crea el metodo textValidate que llama al metodo elementIsDisplayed heredado de BasePage
+    return this.elementIsDisplayed(this.textValidate);
+    }
+    public void writeName(String criteria) { //Se crea el metodo writeName  que llama al metodo write heredado de BasePage
+        this.write(this.name, criteria);
+    }
+    public void writeMail(String criteria) { //Se crea el metodo writeMail que llama al metodo write heredado de BasePage
+        this.write(this.mail, criteria);
+    }
+    public void clickSign() { //Se crea el metodo clickLogin que llama al metodo clickElement heredado de BasePage
+        this.clickElement(this.sign);
+    }
+    public Boolean textValidateDate(){ //Se crea el metodo textValidate que llama al metodo elementIsDisplayed heredado de BasePage
+        return this.elementIsDisplayed(this.dates);
     }
 }

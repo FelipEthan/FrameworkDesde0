@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = {"steps"},
         plugin = {"pretty","summary",
-        "html: target/html",
-        "json: target/json",
-        "junit: target/xml",
-        "timeline: target/cucumber-timeline"},
+                "html:target/.html",
+                "json:target/.json",
+                "junit:target/.xml",
+                "timeline:target/cucumber-timeline"},
         features = "src/test/resources/features",
         tags = "@Test")
 public class Runner {
