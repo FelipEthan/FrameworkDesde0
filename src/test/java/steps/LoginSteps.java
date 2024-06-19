@@ -27,17 +27,20 @@ public class LoginSteps {     // Se crean variables privadas para el WebDriver y
     @When("I enter valid username and password") // Anotación de Cucumber que define un paso When en el archivo feature.
     public void insertNameMail() {
         this.loginPage.writeName("Andres"); // Llama al método writeName de loginPage para escribir el user
-        this.loginPage.writeMail("afquimbayo@gmail.com"); // Llama al método writeMail de loginPage para escribir el mail
+        this.loginPage.writeMail("afquimbayoa@gmail.com"); // Llama al método writeMail de loginPage para escribir el mail
     }
 
     @And("I click on the login button") // Anotación de Cucumber que define un paso When en el archivo feature.
     public void clicSign() {
         this.loginPage.clickSign(); // Llama al método clickSign de loginPage para hacer clic
     }
-    @Then("I should be redirected to the homepage")
+    @Then("I should be redirected to the date")
     public void textDatesUser() {
         this.loginPage.textValidateDate(); // Llama al método textValidateDate de loginPage para validar un texto
-        this.loginPage.closesBrowser(); // Llama al método closesBrowser de loginPage para navegar a la página de inicio de sesión.
-
+    }
+    @And("I am complete information date")
+    public void clicRadio(){
+        this.loginPage.clickradio();
+        this.loginPage.closeBrowser();
     }
 }

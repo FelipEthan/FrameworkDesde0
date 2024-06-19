@@ -4,4 +4,5 @@ Feature: Login screen
     Given I am on the automation page
     When I enter valid username and password
     And I click on the login button
-    Then I should be redirected to the homepage
+    Then I should be redirected to the date
+    And I am complete information date
