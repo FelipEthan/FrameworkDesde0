@@ -8,7 +8,8 @@ public class LoginPage extends BasePage { //La clase LoginPage extiende de BaseP
     private String mail = "//input[@data-qa='signup-email']";
     private String sign = "//button[@data-qa='signup-button']";
     private String dates = "//*[@id=\"form\"]/div/div/div/div[1]/h2";
-    private String title = "//input[@id='id_gender1']";
+    private String gender = "//input[@id='id_gender1']";
+    private String pass = "//input[@id='password']";
 
     public LoginPage(WebDriver driver) { //Se crea el constructor de la clase padre BasePage, Se usa para inicializar la clase padre BasePage con un objeto WebDriver
         super(driver);
@@ -37,7 +38,10 @@ public class LoginPage extends BasePage { //La clase LoginPage extiende de BaseP
     public Boolean textValidateDate(){ //Se crea el metodo textValidate que llama al metodo elementIsDisplayed heredado de BasePage
         return this.elementIsDisplayed(this.dates);
     }
-    public void clickradio() { //Se crea el metodo clickLogin que llama al metodo clickElement heredado de BasePage
-        this.clickElement(this.title);
+    public void clicGender(){ //Se crea el metodo clicGender que llama al metodo clickElement heredado de BasePage
+        this.clickElement(gender);
+    }
+    public void textToWritePass(String textwrite){ //Se crea el metodo textToWritePass que llama al metodo write heredado de BasePage
+        this.write(pass, textwrite);
     }
 }
